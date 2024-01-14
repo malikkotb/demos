@@ -1,6 +1,9 @@
 
 export default function Home() {
   return (
-   <main></main>
+   <main>
+    <div>navbar with list of projects</div>
+    <div>Aniamted COunter</div>
+   </main>
   )
 }

@@ -43,7 +43,7 @@ export function Combobox({ setProject }: any) {
           role="combobox"
           aria-expanded={open}
         //   onClick={() => handleClick()}
-          className="w-[250px] text-black justify-between"
+          className="w-[250px] text-white bg-transparent justify-between"
         >
           
           {value

@@ -1,6 +1,8 @@
 "use client";
 import * as React from "react";
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { useRouter } from 'next/navigation'
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,31 +20,21 @@ import {
 
 const frameworks = [
   {
-    value: "animatedCounter",
-    label: "animatedCounter",
+    value: "animated.counter",
+    label: "Animated Counter",
   },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
+//   {
+//     value: "transition",
+//     label: "Transition",
+//   },
+ 
 ];
 
-export function Combobox() {
+export function Combobox({ setProject }: any) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-
+  const [dummy, setDummy] = React.useState(0)
+  const router = useRouter()
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -50,21 +42,19 @@ export function Combobox() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between
-          bg-transparent text-white rounded-full
-          hover:bg-transparent hover:text-white
-           border-none hover:bg-opacity-50 bg-opacity-30
-          "
+        //   onClick={() => handleClick()}
+          className="w-[250px] text-black justify-between"
         >
+          
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select a project..."}
-          <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            : "Select project..."}
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search projects..." className="h-9" />
+          <CommandInput placeholder="Search framework..." />
           <CommandEmpty>No framework found.</CommandEmpty>
           <CommandGroup>
             {frameworks.map((framework) => (
@@ -72,19 +62,18 @@ export function Combobox() {
                 key={framework.value}
                 value={framework.value}
                 onSelect={(currentValue) => {
-                  console.log("currentValue", currentValue);
-                  console.log("value", value);
-                    setValue(currentValue === value ? "" : currentValue);
-                    setOpen(false);
+                  setValue(currentValue === value ? "" : currentValue);
+                  setOpen(false);
+                  router.push('/' + currentValue)
                 }}
               >
-                {framework.label}
-                <CheckIcon
+                <Check
                   className={cn(
-                    "ml-auto h-4 w-4",
+                    "mr-2 h-4 w-4",
                     value === framework.value ? "opacity-100" : "opacity-0"
                   )}
                 />
+                {framework.label}
               </CommandItem>
             ))}
           </CommandGroup>

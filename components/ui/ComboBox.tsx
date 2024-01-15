@@ -20,7 +20,7 @@ import {
 
 const frameworks = [
   {
-    value: "animated.counter",
+    value: "animated-counter",
     label: "Animated Counter",
   },
 //   {

@@ -23,6 +23,10 @@ const frameworks = [
     value: "animated-counter",
     label: "Animated Counter",
   },
+  {
+    value: "3d-model",
+    label: "3D Model"
+  }
 //   {
 //     value: "transition",
 //     label: "Transition",

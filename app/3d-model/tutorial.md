@@ -27,6 +27,8 @@ export default function Home() {
 
 ### SceneCanvas component
 
+The SceneCanvas component is where the magic happens. We can pass down the source to the Model component which we will cover afterward. 
+
 ```
 "use client";
 
@@ -59,6 +61,11 @@ export default function SceneCanvas({ source }: { source: string}) {
 }
 ```
 
+- OrbitControls: Enables auto-rotating camera with horizontal rotation limits, disabling zoom.
+- Lighting: Combines ambient light for soft shadows and directional light for stronger, directional illumination.
+- Stage Environment: Sets up a "night" scene with automatic lighting and background (Optional).
+
+
 ### Model component
 
 ```
@@ -73,3 +80,6 @@ export default function Model({ source, scale }: Model) {
     return <primitive object={scene} scale={scale} />
 }
 ```
+
+- The `useGLTF` hook can load a 3d model from a .glb file with `source` as the path.
+- Using the `<primitive>` component we can render our 3d model.

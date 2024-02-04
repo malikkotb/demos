@@ -26,11 +26,11 @@ const frameworks = [
   {
     value: "3d-model",
     label: "3D Model"
-  }
-//   {
-//     value: "transition",
-//     label: "Transition",
-//   },
+  },
+  {
+    value: "horizontal-section",
+    label: "Horizontal Section",
+  },
  
 ];
 

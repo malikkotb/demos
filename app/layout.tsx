@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="flex text-white items-center p-4 py-8 justify-between h-[5vw] bg-gray-600 w-screen top-0 sticky">
+        <nav className="flex text-white items-center p-4 py-8 justify-between h-[5vw] bg-gray-600 w-screen top-0">
           <a href="https://malikkotb.github.io/blog/" target="_blank" className="w-[8vw]">Malik ↗</a>
           <Combobox />
           <div className=" justify-end items-center flex w-[8vw]"><img alt="logo" width={36} height={36} src={"./Ellipse.png"} /></div>

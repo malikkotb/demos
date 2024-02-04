@@ -1,14 +1,12 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
-// For using the palceholder="blur" property -> need to import the images statically
 
-export const Card = ({ image }: { image: StaticImageData }) => {
+export const Card = ({ source }: { source: string }) => {
   return (
     <div className="relative h-[80vh] w-[70vw] overflow-hidden">
       <Image
-        src={image} // static Image source
+        src={source} // static Image source
         alt="Description"
-        placeholder="blur"
         fill
       />
     </div>

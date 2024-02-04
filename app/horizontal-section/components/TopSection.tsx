@@ -1,6 +1,4 @@
 import React from "react";
-import Picture10 from "../../../public/10.jpg";
-import Picture11 from "../../../public/11.jpg";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -10,11 +8,11 @@ export default function TopSection() {
   return (
     <div className="w-full mb-36">
       <div className="images flex gap-5 ">
-        <div className="image1 relative w-[30%] min-w-[600px] h-[800px] bg-red-300">
-          <Image src={Picture10} alt="Description" placeholder="blur" fill />
+        <div className="image1 relative w-[30%] min-w-[600px] h-[800px]">
+          <Image src={"./10.jpg"} alt="Description" fill />
         </div>
-        <div className="image2 relative w-[70%] bg-blue-300">
-          <Image src={Picture11} alt="Description" placeholder="blur" fill />
+        <div className="image2 relative w-[70%] ">
+          <Image src={"./11.jpg"} alt="Description" fill />
         </div>
       </div>
       <div className="body">

@@ -1,12 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import Picture17 from "../../../public/17.jpeg";
 
 export default function BottomSection() {
   return (
     <div className="mt-20 w-full flex items-center">
-      <div className="relative h-[70vh] w-[30%] max-h-[1200px] bg-amber-200">
-        <Image src={Picture17} fill alt="bottom" />
+      <div className="relative h-[70vh] w-[30%] max-h-[1200px]">
+        <Image src={"./17.jpeg"} fill alt="bottom" />
       </div>
       <div className="w-[20%] ml-[15%]">
         <h2 className="text-4xl">Lorem Ipsum</h2>

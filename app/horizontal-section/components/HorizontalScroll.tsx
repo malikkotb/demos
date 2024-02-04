@@ -3,11 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "./Card";
 import Image from "next/image";
-import Picture24 from "../../../public/24.jpeg";
-import Picture25 from "../../../public/25.jpeg";
-import Picture26 from "../../../public/26.jpeg";
-import Picture27 from "../../../public/27.jpeg";
-import Picture16 from "../../../public/16.jpg";
 
 
 export default function HorizontalScroll() {
@@ -42,16 +37,15 @@ export default function HorizontalScroll() {
             </div>
             <div className="relative h-[70vh] w-[80vw] overflow-hidden">
               <Image
-                src={Picture25} // static Image source
+                src={"./25.jpeg"} 
                 alt="Description"
-                placeholder="blur"
                 fill
               />
             </div>
           </div>
           <div className="flex gap-5">
-            <Card key={2} image={Picture26} />
-            <Card key={3} image={Picture27} />
+            <Card key={2} source={"./26.jpeg"} />
+            <Card key={3} source={"./27.jpeg"} />
           </div>
           <div className="h-[75vh] w-[30vw] flex items-center justify-center flex-shrink-0">
             <p>
@@ -65,25 +59,19 @@ export default function HorizontalScroll() {
           <div className="flex gap-12 w-[60vw] flex-shrink-0">
             <div className="relative h-[30%] w-[40%] overflow-hidden">
               <Image
-                src={Picture24}
+                src={"./24.jpeg"}
                 alt="Description"
-                placeholder="blur"
                 fill
               />
             </div>
             <div className="relative h-[full] w-[50%] overflow-hidden">
               <Image
-                src={Picture16} 
+                src={"./16.jpg"} 
                 alt="Description"
-                placeholder="blur"
                 fill
               />
             </div>
           </div>
-
-          {/* {images.map((Image, index) => (
-            <Card key={index} image={Image} />
-          ))} */}
         </motion.div>
       </div>
     </section>

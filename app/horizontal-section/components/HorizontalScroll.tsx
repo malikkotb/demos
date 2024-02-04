@@ -66,7 +66,7 @@ export default function HorizontalScroll() {
             </div>
             <div className="relative h-[full] w-[50%] overflow-hidden">
               <Image
-                src={"./16.jpg"} 
+                src={"./16.JPG"} 
                 alt="Description"
                 fill
               />

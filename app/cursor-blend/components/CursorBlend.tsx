@@ -56,7 +56,7 @@ export default function CursorBlend() {
 
       <div className="body w-full h-full flex items-center justify-center text-[#afa18f] text-6xl leading-[66px] cursor-default">
         <p className="w-[90vw] p-10">
-          I'm an <span className="text-[#433bff]">independent creative</span>{" "}
+          I am an <span className="text-[#433bff]">independent creative</span>{" "}
           web developer.
         </p>
       </div>

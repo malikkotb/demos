@@ -1,6 +1,6 @@
 "use client";
-import React from 'react';
-import styles from '../style.module.css';
+import React from "react";
+import styles from "../style.module.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import maskImage from "../../public/mask.svg";
@@ -10,7 +10,7 @@ export default function CursorBlend() {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
   const cursorSize = isHovering ? 400 : 40;
 
-  const manageMouseMove = (e: { clientX: any; clientY: any; }) => {
+  const manageMouseMove = (e: { clientX: any; clientY: any }) => {
     const { clientX, clientY } = e;
     setMousePosition({ x: clientX, y: clientY });
   };
@@ -42,7 +42,7 @@ export default function CursorBlend() {
         className={`${styles.mask} w-full h-full flex items-center justify-center text-[#afa18f] text-6xl leading-[66px] cursor-default`}
       >
         <p
-          className="w-[90vw] p-10"
+          className="w-[80vw] p-10"
           onMouseEnter={() => {
             setIsHovering(true);
           }}
@@ -50,14 +50,17 @@ export default function CursorBlend() {
             setIsHovering(false);
           }}
         >
-          Hiding bad shit from people since 2021 and on.
+          Sapphire dreams cascade through lemonade rivers, tickling stars with
+          feathered laughter, as time pirouettes in a kaleidoscope of forgotten
+          melodies.
         </p>
       </motion.div>
 
       <div className="body w-full h-full flex items-center justify-center text-[#afa18f] text-6xl leading-[66px] cursor-default">
-        <p className="w-[90vw] p-10">
-          I am an <span className="text-[#433bff]">independent creative</span>{" "}
-          web developer.
+        <p className="w-[80vw] p-10">
+          Purple feathers <span className="text-[#433bff]">dance atop</span>{" "}
+          glass mountains, whispering secrets to the moon's reflection, while
+          elephants juggle galaxies in a cosmic tea party.
         </p>
       </div>
     </section>

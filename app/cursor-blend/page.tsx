@@ -5,6 +5,6 @@ const gothic_a1 = Gothic_A1({subsets: ["latin"], weight: ["900"]})
 
 export default function page() {
   return (
-    <div><CursorBlend /></div>
+    <div className={`${gothic_a1.className}`}><CursorBlend /></div>
   )
 }

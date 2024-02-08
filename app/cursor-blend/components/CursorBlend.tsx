@@ -59,7 +59,7 @@ export default function CursorBlend() {
       <div className="body w-full h-full flex items-center justify-center text-[#afa18f] text-6xl leading-[66px] cursor-default">
         <p className="w-[80vw] p-10">
           Purple feathers <span className="text-[#433bff]">dance atop</span>{" "}
-          glass mountains, whispering secrets to the moon's reflection, while
+          glass mountains, whispering secrets to the moon&apos;s reflection, while
           elephants juggle galaxies in a cosmic tea party.
         </p>
       </div>

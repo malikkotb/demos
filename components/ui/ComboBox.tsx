@@ -31,7 +31,10 @@ const frameworks = [
     value: "horizontal-section",
     label: "Horizontal Section",
   },
- 
+  {
+    value: "cursor-blend",
+    label: "Cursor Blend",
+  },
 ];
 
 export function Combobox({ setProject }: any) {

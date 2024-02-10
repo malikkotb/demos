@@ -1,4 +1,3 @@
 .mask {
-    mask-image: url("../../public/mask.svg");
-  }
-  
+  mask-image: url("../../public/mask.svg");
+}

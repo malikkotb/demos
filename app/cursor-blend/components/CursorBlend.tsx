@@ -3,12 +3,11 @@ import React from "react";
 import styles from "../style.module.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import maskImage from "../../public/mask.svg";
 export default function CursorBlend() {
   const [isHovering, setIsHovering] = useState(false); // hover state
+  const cursorSize = isHovering ? 400 : 40;
 
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
-  const cursorSize = isHovering ? 400 : 40;
 
   const manageMouseMove = (e: { clientX: any; clientY: any }) => {
     const { clientX, clientY } = e;
@@ -23,7 +22,7 @@ export default function CursorBlend() {
   }, []);
 
   return (
-    <section className="section h-screen bg-black">
+    <main className="section h-screen bg-black">
       <motion.div
         animate={{
           WebkitMaskPosition: `${(mousePosition.x || 0) - cursorSize / 2}px ${
@@ -56,13 +55,13 @@ export default function CursorBlend() {
         </p>
       </motion.div>
 
-      <div className="body w-full h-full flex items-center justify-center text-[#afa18f] text-6xl leading-[66px] cursor-default">
+      <div className="w-full h-full flex items-center justify-center text-[#afa18f] text-6xl leading-[66px] cursor-default">
         <p className="w-[80vw] p-10">
           Purple feathers <span className="text-[#433bff]">dance atop</span>{" "}
           glass mountains, whispering secrets to the moon&apos;s reflection, while
           elephants juggle galaxies in a cosmic tea party.
         </p>
       </div>
-    </section>
+    </main>
   );
 }

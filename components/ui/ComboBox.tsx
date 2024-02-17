@@ -35,10 +35,6 @@ const frameworks = [
     value: "cursor-blend",
     label: "Cursor Blend",
   },
-  {
-    value: "color-scroll",
-    label: "Color Scroll"
-  }
 ];
 
 export function Combobox({ setProject }: any) {

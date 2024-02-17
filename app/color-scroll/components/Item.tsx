@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-export default function Item({ source, index, isLast }) {
+export default function Item({ source, index, isLast }: {source: any, index: number, isLast: boolean}) {
   return (
     <div className={`h-[${isLast ? 100 : 125}vh] items-center justify-center flex flex-col gap-2 m-0 p-0`}>
       <div className="mt-[-10%]">

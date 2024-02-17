@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Item from "./components/Item";
 
-const images = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/5.jpg"];
+const images = ["./1.jpg", "./2.jpg", "./3.jpg", "./4.jpg", "./5.jpg"];
 const colors = ["#00c1b5", "#ff651a", " #ffbe00", "#1d3fbb", "#e30512"];
 
 export default function Home() {

@@ -35,6 +35,10 @@ const frameworks = [
     value: "cursor-blend",
     label: "Cursor Blend",
   },
+  {
+    value: "flashlight-gradient",
+    label: "Flashlight Gradient"
+  }
 ];
 
 export function Combobox({ setProject }: any) {

@@ -9,10 +9,10 @@ export default function TopSection() {
     <div className="w-full mb-36">
       <div className="images flex gap-5 ">
         <div className="image1 relative w-[30%] min-w-[600px] h-[800px]">
-          <Image src={"./10.jpg"} alt="Description" fill />
+          <Image src="/10.jpg" alt="Description" fill />
         </div>
         <div className="image2 relative w-[70%] ">
-          <Image src={"./11.jpg"} alt="Description" fill />
+          <Image src="/11.jpg" alt="Description" fill />
         </div>
       </div>
       <div className="body">

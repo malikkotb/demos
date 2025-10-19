@@ -26,10 +26,6 @@ const frameworks = [
     label: "Animated Counter",
   },
   {
-    value: "3d-model",
-    label: "3D Model",
-  },
-  {
     value: "horizontal-section",
     label: "Horizontal Section",
   },
@@ -51,19 +47,23 @@ export function Combobox({ setProject }: any) {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  
+
   // Get current project from URL path
-  const currentProject = pathname?.split('/')[1] || '';
-  
+  const currentProject = pathname?.split("/")[1] || "";
+
   // Set initial value based on current URL
   const [value, setValue] = React.useState(() => {
-    const projectExists = frameworks.find(framework => framework.value === currentProject);
+    const projectExists = frameworks.find(
+      (framework) => framework.value === currentProject
+    );
     return projectExists ? currentProject : "";
   });
-  
+
   // Update value when pathname changes
   React.useEffect(() => {
-    const projectExists = frameworks.find(framework => framework.value === currentProject);
+    const projectExists = frameworks.find(
+      (framework) => framework.value === currentProject
+    );
     setValue(projectExists ? currentProject : "");
   }, [currentProject]);
   return (

@@ -41,6 +41,10 @@ const frameworks = [
     value: "particle-distorter",
     label: "Particle Distorter",
   },
+  {
+    value: "threedwave",
+    label: "3D Wave on Scroll",
+  },
 ];
 
 export function Combobox({ setProject }: any) {

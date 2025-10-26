@@ -19,7 +19,7 @@ export default function RootLayout({
           style={{
             mixBlendMode: "difference",
           }}
-          className='flex fixed text-white bg-transparent items-center top-0 z-50 p-4 py-8 justify-between h-[5vw] w-full'
+          className='flex fixed text-white bg-transparent items-center top-0 z-50 p-4 py-8 justify-between h-[5vh] w-full'
         >
           {/* <a
             href='https://malikkotb.github.io/blog/'

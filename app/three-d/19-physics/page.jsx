@@ -193,7 +193,7 @@ export default function Physics() {
       world.step(1 / 60, deltaTime, 3);
 
       // then, we take cooridinates from the physics world and apply them to the three.js mesh (our sphere)
-        // sphere.position.copy(sphereBody.position);
+      // sphere.position.copy(sphereBody.position);
 
       // update controls
       controls.update();

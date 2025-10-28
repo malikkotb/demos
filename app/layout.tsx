@@ -28,7 +28,7 @@ export default function RootLayout({
           >
             Malik's Demos
           </a> */}
-          <div>Malik&apos;s Demos</div>
+          <a href='/'>Malik&apos;s Playground</a>
           <div
             style={{ zIndex: 100 }}
             // className='absolute left-1/2 -translate-x-1/2 py-2'

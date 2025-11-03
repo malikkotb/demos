@@ -34,6 +34,10 @@ const frameworks = [
     label: "Cursor Blend",
   },
   {
+    value: "bulge-distortion-shader",
+    label: "Bulge Distortion Shader",
+  },
+  {
     value: "flashlight-gradient",
     label: "Flashlight Gradient",
   },
@@ -44,6 +48,10 @@ const frameworks = [
   {
     value: "threedwave",
     label: "3D Wave on Scroll",
+  },
+  {
+    value: "3d-image-universe",
+    label: "3D Image Universe",
   },
 ];
 

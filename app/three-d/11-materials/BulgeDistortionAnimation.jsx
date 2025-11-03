@@ -8,6 +8,24 @@ export default function BulgeDistortionAnimation() {
   const cursorRef = useRef();
 
   useEffect(() => {
+    const hasReloaded = sessionStorage.getItem(
+      "bulge-distortion-reloaded"
+    );
+    if (!hasReloaded) {
+      sessionStorage.setItem("bulge-distortion-reloaded", "true");
+      window.location.reload();
+      return;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mountRef.current) return;
+
+    // Clear any existing canvas elements
+    while (mountRef.current.firstChild) {
+      mountRef.current.removeChild(mountRef.current.firstChild);
+    }
+
     const width = mountRef.current.clientWidth;
     const height = mountRef.current.clientHeight;
 
@@ -24,7 +42,7 @@ export default function BulgeDistortionAnimation() {
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
-    renderer.setClearColor(0xffffff, 1); // Set white background
+    // renderer.setClearColor(0xffffff, 1); // Set white background
     mountRef.current.appendChild(renderer.domElement);
 
     // Plane geometry
@@ -117,16 +135,23 @@ export default function BulgeDistortionAnimation() {
     window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
+    let animationFrameId;
     const animate = () => {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
       renderer.render(scene, camera);
     };
     animate();
 
     // Cleanup
     return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
       window.removeEventListener("mousemove", onMouseMove);
-      mountRef.current.removeChild(renderer.domElement);
+      if (mountRef.current && renderer.domElement) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
       geometry.dispose();
       material.dispose();
       texture.dispose();
@@ -134,21 +159,15 @@ export default function BulgeDistortionAnimation() {
   }, []);
 
   return (
-    <>
       <div
         ref={mountRef}
         style={{
           width: "100%",
-          height: "100vh",
+          height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          overflow: "hidden", // This ensures the canvas respects the border radius
         }}
       />
-    </>
   );
 }

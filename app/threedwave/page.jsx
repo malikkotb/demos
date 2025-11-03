@@ -166,11 +166,6 @@ export default function ThreeDWaveScroll() {
     /* Scroll */
     let scrollY = window.scrollY;
 
-    /* Parallax */
-    // action of seeing one object through differnt observation points
-    // we're going to apply a parallax effect by making the camera move horizontally and vertically
-    // according to the mouse position
-
     /* Cursor */
     const cursor = {
       x: 0,

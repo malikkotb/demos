@@ -5,9 +5,20 @@ import gsap from "gsap";
 import GUI from "lil-gui";
 import { Timer } from "three/src/core/Timer.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import vertexShader from "./shaders/test/vertex.glsl";
+import fragmentShader from "./shaders/test/fragment.glsl";
 
 export default function Shaders() {
   const canvasRef = useRef(null);
+
+  // TODO: IMPORTANT
+  // we can send a value from the vertext to the fragment shader.
+  // those are called **varyings** and the value gets interpolated between the vertices.
+
+  // for custom shaders u can use
+  // ShaderMaterial or RawShaderMaterial
+  // ShaderMaterial will have some code automatically added to the shader codes
+  // RawShaderMaterial will have nothing
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -23,6 +34,7 @@ export default function Shaders() {
      * Textures
      */
     const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load("/image.png");
 
     /**
      * Test mesh
@@ -30,8 +42,56 @@ export default function Shaders() {
     // Geometry
     const geometry = new THREE.PlaneGeometry(1, 1, 32, 32);
 
-    // Material
-    const material = new THREE.MeshBasicMaterial();
+    // we can add random values for each vertex and move that vertex on the z axis according to that value
+    const count = geometry.attributes.position.count;
+    const randoms = new Float32Array(count);
+
+    for (let i = 0; i < count; i++) {
+      randoms[i] = Math.random();
+    }
+
+    geometry.setAttribute(
+      "aRandom",
+      new THREE.BufferAttribute(randoms, 1)
+    );
+
+    console.log(geometry);
+
+    // Material // RawShaderMaterial
+    const material = new THREE.RawShaderMaterial({
+      vertexShader,
+      fragmentShader,
+      // some other three.js properties still work:
+      // side: THREE.DoubleSide,
+      // wireframe: true,
+      transparent: true, // for alpha to work
+      // many won't work, like:
+      // map, alphaMap, opacity, color etc.
+      uniforms: {
+        uFrequency: { value: new THREE.Vector2(10, 5) },
+        uTime: { value: 0 },
+        uTexture: { value: texture },
+        // uColor: { value: new THREE.Color(0x00ff00) },
+      },
+    });
+
+    gui
+      .add(material.uniforms.uFrequency.value, "x")
+      .min(0)
+      .max(20)
+      .step(0.01)
+      .name("frequencyX");
+    gui
+      .add(material.uniforms.uFrequency.value, "y")
+      .min(0)
+      .max(20)
+      .step(0.01)
+      .name("frequencyY");
+
+
+    // ShaderMaterial
+    // same as RawShaderMaterial but with pre-built uniforms, attributes
+    // and prcisons prepended to the shader codes
 
     // Mesh
     const mesh = new THREE.Mesh(geometry, material);
@@ -101,6 +161,9 @@ export default function Shaders() {
 
     const tick = () => {
       const elapsedTime = clock.getElapsedTime();
+
+      // Update time uniform for animation
+      material.uniforms.uTime.value = elapsedTime;
 
       // update controls
       controls.update();

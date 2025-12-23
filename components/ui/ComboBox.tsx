@@ -53,6 +53,10 @@ const frameworks = [
     value: "3d-image-universe",
     label: "3D Image Universe",
   },
+  {
+    value: "3d-video-throwback",
+    label: "3D Video Throwback",
+  }
 ];
 
 export function Combobox({ setProject }: any) {

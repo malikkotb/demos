@@ -71,6 +71,7 @@ export default function Shaders() {
         uFrequency: { value: new THREE.Vector2(10, 5) },
         uTime: { value: 0 },
         uTexture: { value: texture },
+        uWaveIntensity: { value: 0.1 },
         // uColor: { value: new THREE.Color(0x00ff00) },
       },
     });
@@ -87,6 +88,12 @@ export default function Shaders() {
       .max(20)
       .step(0.01)
       .name("frequencyY");
+    gui
+      .add(material.uniforms.uWaveIntensity, "value")
+      .min(0)
+      .max(1)
+      .step(0.01)
+      .name("waveIntensity");
 
 
     // ShaderMaterial

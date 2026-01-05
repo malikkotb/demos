@@ -18,53 +18,10 @@ export default function ShaderPatterns() {
 
     // Debug UI
     const gui = new GUI({ width: 230, title: "Debug UI" });
-    
-    // Effect controls
-    const effectControls = {
-      amplitude: 100.0,
-      waveEnabled: true,
-      pulseEnabled: true,
-      useCursor: "Time Only", // "Time Only", "Cursor Only", "Both"
-    };
-    
-    gui
-      .add(effectControls, "amplitude")
-      .min(10)
-      .max(200)
-      .step(1)
-      .name("Amplitude")
-      .onChange((value) => {
-        material.uniforms.uAmplitude.value = value;
-      });
-    
-    gui
-      .add(effectControls, "waveEnabled")
-      .name("Wave Effect")
-      .onChange((value) => {
-        material.uniforms.uWaveEnabled.value = value ? 1.0 : 0.0;
-      });
-    
-    gui
-      .add(effectControls, "pulseEnabled")
-      .name("Pulse Effect")
-      .onChange((value) => {
-        material.uniforms.uPulseEnabled.value = value ? 1.0 : 0.0;
-      });
-    
-    gui
-      .add(effectControls, "useCursor", ["Time Only", "Cursor Only"])
-      .name("Animation Mode")
-      .onChange((value) => {
-        if (value === "Time Only") {
-          material.uniforms.uUseCursor.value = 0.0;
-        } else {
-          material.uniforms.uUseCursor.value = 1.0;
-        }
-      });
 
     // Scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color("#fff");
+    scene.background = new THREE.Color("#000000");
 
     /**
      * Textures
@@ -86,11 +43,6 @@ export default function ShaderPatterns() {
       side: THREE.DoubleSide,
       uniforms: {
         uTime: { value: 0 },
-        uAmplitude: { value: 100.0 },
-        uWaveEnabled: { value: 1.0 },
-        uPulseEnabled: { value: 1.0 },
-        uCursor: { value: new THREE.Vector2(0.5, 0.5) },
-        uUseCursor: { value: 0.0 },
       },
     });
 
@@ -160,16 +112,6 @@ export default function ShaderPatterns() {
     const clock = new THREE.Clock();
     let oldElapsedTime = 0;
 
-    // Mouse tracking
-    const handleMouseMove = (event) => {
-      // Normalize mouse coordinates to 0-1 range
-      const x = event.clientX / window.innerWidth;
-      const y = 1.0 - (event.clientY / window.innerHeight); // Flip Y axis
-      material.uniforms.uCursor.value.set(x, y);
-    };
-    
-    window.addEventListener("mousemove", handleMouseMove);
-
     const tick = () => {
       const elapsedTime = clock.getElapsedTime();
 
@@ -191,7 +133,6 @@ export default function ShaderPatterns() {
     // Cleanup
     return () => {
       window.removeEventListener("resize", onResize);
-      window.removeEventListener("mousemove", handleMouseMove);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
       renderer.dispose();
     };

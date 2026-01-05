@@ -30,6 +30,10 @@ const frameworks = [
     label: "Horizontal Section",
   },
   {
+    value: "mouse-image-distorter",
+    label: "Mouse Image Distorter",
+  },
+  {
     value: "cursor-blend",
     label: "Cursor Blend",
   },

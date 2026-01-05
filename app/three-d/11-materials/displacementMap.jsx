@@ -41,7 +41,7 @@ export default function DisplacementPlane() {
 
     // Material with displacement map
     const displacementTexture = new THREE.TextureLoader().load(
-      "/textures/door/height.jpg"
+      "/textures/door/height.avif"
     );
     const material = new THREE.ShaderMaterial({
       side: THREE.DoubleSide,

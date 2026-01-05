@@ -27,7 +27,7 @@ export default function ShaderPatterns() {
      * Textures
      */
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load("/image.png");
+    const texture = textureLoader.load("/image.avif");
 
     /**
      * Test mesh

@@ -21,20 +21,20 @@ export default function ThreeDTextPage() {
     const textureLoader = new THREE.TextureLoader();
 
     const floorAlphaTexture = textureLoader.load(
-      "/textures/floor/alpha.jpg"
+      "/textures/floor/alpha.avif"
     );
 
     const floorColorTexture = textureLoader.load(
-      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_diff_1k.jpg"
+      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_diff_1k.avif"
     );
     const floorARMTexture = textureLoader.load(
-      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_arm_1k.jpg"
+      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_arm_1k.avif"
     );
     const floorNormalTexture = textureLoader.load(
-      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_nor_gl_1k.jpg"
+      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_nor_gl_1k.avif"
     );
     const floorDisplacementTexture = textureLoader.load(
-      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_disp_1k.jpg"
+      "/textures/floor/coast_sand_rocks_02_1k/coast_sand_rocks_02_disp_1k.avif"
     );
 
     floorColorTexture.repeat.set(8, 8);
@@ -56,26 +56,26 @@ export default function ThreeDTextPage() {
 
     // Wall textures
     const wallColorTexture = textureLoader.load(
-      "/textures/wall/castle_brick_broken_06_1k/castle_brick_broken_06_diff_1k.jpg"
+      "/textures/wall/castle_brick_broken_06_1k/castle_brick_broken_06_diff_1k.avif"
     );
     const wallARMTexture = textureLoader.load(
-      "/textures/wall/castle_brick_broken_06_1k/castle_brick_broken_06_arm_1k.jpg"
+      "/textures/wall/castle_brick_broken_06_1k/castle_brick_broken_06_arm_1k.avif"
     );
     const wallNormalTexture = textureLoader.load(
-      "/textures/wall/castle_brick_broken_06_1k/castle_brick_broken_06_nor_gl_1k.jpg"
+      "/textures/wall/castle_brick_broken_06_1k/castle_brick_broken_06_nor_gl_1k.avif"
     );
 
     wallColorTexture.colorSpace = THREE.SRGBColorSpace;
 
     // Roof textures
     const roofColorTexture = textureLoader.load(
-      "/textures/roof/roof_slates_02_1k/roof_slates_02_diff_1k.jpg"
+      "/textures/roof/roof_slates_02_1k/roof_slates_02_diff_1k.avif"
     );
     const roofARMTexture = textureLoader.load(
-      "/textures/roof/roof_slates_02_1k/roof_slates_02_arm_1k.jpg"
+      "/textures/roof/roof_slates_02_1k/roof_slates_02_arm_1k.avif"
     );
     const roofNormalTexture = textureLoader.load(
-      "/textures/roof/roof_slates_02_1k/roof_slates_02_nor_gl_1k.jpg"
+      "/textures/roof/roof_slates_02_1k/roof_slates_02_nor_gl_1k.avif"
     );
 
     roofColorTexture.repeat.set(3, 1);
@@ -90,13 +90,13 @@ export default function ThreeDTextPage() {
 
     // Bush textures
     const bushColorTexture = textureLoader.load(
-      "/textures/bush/leaves_forest_ground_1k/leaves_forest_ground_diff_1k.jpg"
+      "/textures/bush/leaves_forest_ground_1k/leaves_forest_ground_diff_1k.avif"
     );
     const bushARMTexture = textureLoader.load(
-      "/textures/bush/leaves_forest_ground_1k/leaves_forest_ground_arm_1k.jpg"
+      "/textures/bush/leaves_forest_ground_1k/leaves_forest_ground_arm_1k.avif"
     );
     const bushNormalTexture = textureLoader.load(
-      "/textures/bush/leaves_forest_ground_1k/leaves_forest_ground_nor_gl_1k.jpg"
+      "/textures/bush/leaves_forest_ground_1k/leaves_forest_ground_nor_gl_1k.avif"
     );
 
     bushColorTexture.colorSpace = THREE.SRGBColorSpace;
@@ -112,13 +112,13 @@ export default function ThreeDTextPage() {
     // Grave textures
     // Grave
     const graveColorTexture = textureLoader.load(
-      "/textures/grave/plastered_stone_wall_1k/plastered_stone_wall_diff_1k.jpg"
+      "/textures/grave/plastered_stone_wall_1k/plastered_stone_wall_diff_1k.avif"
     );
     const graveARMTexture = textureLoader.load(
-      "/textures/grave/plastered_stone_wall_1k/plastered_stone_wall_arm_1k.jpg"
+      "/textures/grave/plastered_stone_wall_1k/plastered_stone_wall_arm_1k.avif"
     );
     const graveNormalTexture = textureLoader.load(
-      "/textures/grave/plastered_stone_wall_1k/plastered_stone_wall_nor_gl_1k.jpg"
+      "/textures/grave/plastered_stone_wall_1k/plastered_stone_wall_nor_gl_1k.avif"
     );
 
     graveColorTexture.colorSpace = THREE.SRGBColorSpace;
@@ -131,25 +131,25 @@ export default function ThreeDTextPage() {
 
     // Door textures
     const doorColorTexture = textureLoader.load(
-      "/textures/door/color.jpg"
+      "/textures/door/color.avif"
     );
     const doorAlphaTexture = textureLoader.load(
-      "/textures/door/alpha.jpg"
+      "/textures/door/alpha.avif"
     );
     const doorAmbientOcclusionTexture = textureLoader.load(
-      "/textures/door/ambientOcclusion.jpg"
+      "/textures/door/ambientOcclusion.avif"
     );
     const doorHeightTexture = textureLoader.load(
-      "/textures/door/height.jpg"
+      "/textures/door/height.avif"
     );
     const doorNormalTexture = textureLoader.load(
-      "/textures/door/normal.jpg"
+      "/textures/door/normal.avif"
     );
     const doorMetalnessTexture = textureLoader.load(
-      "/textures/door/metalness.jpg"
+      "/textures/door/metalness.avif"
     );
     const doorRoughnessTexture = textureLoader.load(
-      "/textures/door/roughness.jpg"
+      "/textures/door/roughness.avif"
     );
 
     doorColorTexture.colorSpace = THREE.SRGBColorSpace;

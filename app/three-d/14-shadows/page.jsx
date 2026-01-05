@@ -15,10 +15,10 @@ export default function ThreeDTextPage() {
     /* Textures */
     const textureLoader = new THREE.TextureLoader();
     const bakedShadowTexture = textureLoader.load(
-      "/textures/shadows/bakedShadow.jpg"
+      "/textures/shadows/bakedShadow.avif"
     );
     const simpleShadowTexture = textureLoader.load(
-      "/textures/shadows/simpleShadow.jpg"
+      "/textures/shadows/simpleShadow.avif"
     );
     // Textures used as map and matcap are supposed to be encoded in sRGB. !!!
     // In the latest versions of Three.js we need to specify it by setting their colorSpace to THREE.SRGBColorSpace:
@@ -182,7 +182,7 @@ export default function ThreeDTextPage() {
     // problem is you cant change position of that shadow later ( they are static)
 
     // Baking Shadow alternatives
-    // using simpleShadow.jpg as shadow map; it's just a diffuse light/gradient that we'll use to put ona plane below our object
+    // using simpleShadow.avif as shadow map; it's just a diffuse light/gradient that we'll use to put ona plane below our object
     // and when our object moves, we'll move the plane with it
     // and if object goes up, we can reduce the alpha of the shadow texture to make it look like it's going up
 

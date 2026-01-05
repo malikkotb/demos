@@ -16,11 +16,11 @@ const myFont = localFont({
 console.log(myFont.className);
 
 const projects = [
-  { name: "Fragments", image: "/image.png" },
-  { name: "Surface Tension", image: "/14.jpg" },
-  { name: "Parallel Lines", image: "/22.jpg" },
-  { name: "Deep Current", image: "/11.jpg" },
-  { name: "Open Field", image: "/12.jpg" },
+  { name: "Fragments", image: "/image.avif" },
+  { name: "Surface Tension", image: "/14.avif" },
+  { name: "Parallel Lines", image: "/22.avif" },
+  { name: "Deep Current", image: "/11.avif" },
+  { name: "Open Field", image: "/12.avif" },
 ];
 
 export default function MouseImageDistorter() {

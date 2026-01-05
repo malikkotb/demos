@@ -29,26 +29,26 @@ export default function MaterialsPage() {
     /* Textures */
     const textureLoader = new THREE.TextureLoader();
     const doorColorTexture = textureLoader.load(
-      "/textures/door/color.jpg"
+      "/textures/door/color.avif"
     );
     const doorAmbientOcclusionTexture = textureLoader.load(
-      "/textures/door/ambientOcclusion.jpg"
+      "/textures/door/ambientOcclusion.avif"
     );
     const doorHeightTexture = textureLoader.load(
-      "/textures/door/height.jpg"
+      "/textures/door/height.avif"
     );
     const doorRoughnessTexture = textureLoader.load(
-      "/textures/door/roughness.jpg"
+      "/textures/door/roughness.avif"
     );
     const doorNormalTexture = textureLoader.load(
-      "/textures/door/normal.jpg"
+      "/textures/door/normal.avif"
     );
     const doorMetalnessTexture = textureLoader.load(
-      "/textures/door/metalness.jpg"
+      "/textures/door/metalness.avif"
     );
 
     const doorAlphaTexture = textureLoader.load(
-      "/textures/door/alpha.jpg"
+      "/textures/door/alpha.avif"
     );
 
     const matcapTexture = textureLoader.load(
@@ -56,7 +56,7 @@ export default function MaterialsPage() {
     );
 
     const gradientTexture = textureLoader.load(
-      "/textures/gradients/5.jpg" // will render 5 pixels when using NearestFilter and MeshToonMaterial
+      "/textures/gradients/5.avif" // will render 5 pixels when using NearestFilter and MeshToonMaterial
     );
 
     const environmentMapTexture = textureLoader.load(

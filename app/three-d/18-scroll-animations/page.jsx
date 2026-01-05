@@ -18,7 +18,7 @@ export default function ScrollAnimations() {
     // Image textures
     const textureLoader = new THREE.TextureLoader();
     const gradientTexture = textureLoader.load(
-      "/textures/gradients/3.jpg"
+      "/textures/gradients/3.avif"
     );
     gradientTexture.magFilter = THREE.NearestFilter;
 

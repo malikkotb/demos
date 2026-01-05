@@ -44,13 +44,13 @@ export default function GeometriesPage() {
     );
     colorTexture.colorSpace = THREE.SRGBColorSpace;
     const alphaTexture = textureLoader.load(
-      "/textures/door/alpha.jpg"
+      "/textures/door/alpha.avif"
     );
     const heightTexture = textureLoader.load(
-      "/textures/door/height.jpg"
+      "/textures/door/height.avif"
     );
     const normalTexture = textureLoader.load(
-      "/textures/door/normal.jpg"
+      "/textures/door/normal.avif"
     );
 
     // Transforming the texture
@@ -91,7 +91,7 @@ export default function GeometriesPage() {
     // texture format and optimization
     // users will have to download the textures
     // -> choose the right type of file
-    // .jpg -> lossy compression but usually lighter
+    // .avif -> lossy compression but usually lighter
     // .png -> lossless compression but usually heavier
     // you can use compression websites and softwares like TinyPNG
 
@@ -107,7 +107,7 @@ export default function GeometriesPage() {
     // 512x512, 1024x1024, 512x2048, etc.
 
     // The Data
-    // textures support transparency, BUT we cant have transparency in .jpg
+    // textures support transparency, BUT we cant have transparency in .avif
     // if we want to have only one texture that combines color and alpha, -> use .png
 
     // if we are using a normal texture we want to have the exact values which is why we shouldn't apply

@@ -19,7 +19,7 @@ export default function ThreeDWaveScroll() {
     const textureLoader = new THREE.TextureLoader();
 
     // Load texture for the plane
-    const planeTexture = textureLoader.load("/image.png");
+    const planeTexture = textureLoader.load("/image.avif");
 
     // Debug UI
     const gui = new GUI({

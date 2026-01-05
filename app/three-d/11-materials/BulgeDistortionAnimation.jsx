@@ -51,7 +51,7 @@ export default function BulgeDistortionAnimation() {
     const geometry = new THREE.PlaneGeometry(1, 1, 128, 128);
 
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load("/textures/image.png");
+    const texture = textureLoader.load("/textures/image.avif");
 
     const material = new THREE.ShaderMaterial({
       side: THREE.DoubleSide,

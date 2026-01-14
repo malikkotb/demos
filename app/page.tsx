@@ -15,8 +15,8 @@ export default function Home() {
           padding: "14px",
         }}
       >
-        <div className='text-[28px] lg:max-w-[50%] pt-[50%] lg:pt-[25vh] leading-[1.2] text-black'>
-          Here I use code and creativity to eplore 3D experiences,
+        <div className='text-[28px] pt-[50%] lg:pt-[25vh] leading-[1.2] text-black'>
+          Here I use code and creativity to eplore 3D experiences,<br className="hidden lg:block" />
           WebGL, and animations for the modern web.
         </div>
         <div 

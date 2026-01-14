@@ -100,7 +100,7 @@ export function Combobox({ setProject }: any) {
             ? frameworks.find(
                 (framework) => framework.value === value
               )?.label
-            : "Experiments"}
+            : "Experiments" [9]}
           <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
         </Button>
       </PopoverTrigger>

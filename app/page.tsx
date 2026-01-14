@@ -1,11 +1,40 @@
+import SpectralGLBackground from "@/components/SpectralGLBackground";
+
 export default function Home() {
   return (
-    <main className='flex p-4 items-center justify-center h-screen'>
-      <div className='text-[5vw] leading-[1] lg:text-[2.5w] text-white'>
-        Here I use code and creativity to build 3D experiences,
-        shaders, and animations for the modern web.
-      </div>
-      {/* <div>TODO: add bulge effect animation to the demos</div> */}
-    </main>
+    <>
+      <SpectralGLBackground />
+      <main
+        className=''
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 999,
+          pointerEvents: "none",
+          display: "flex",
+          padding: "14px",
+        }}
+      >
+        <div className='text-[28px] lg:max-w-[50%] pt-[50%] lg:pt-[25vh] leading-[1.2] text-black'>
+          Here I use code and creativity to eplore 3D experiences,
+          WebGL, and animations for the modern web.
+        </div>
+        <div 
+          className='fixed bottom-[14px] right-[14px]'
+          style={{
+            pointerEvents: 'auto',
+          }}
+        >
+          <a 
+            href='https://www.malikkotb.com' 
+            target='_blank' 
+            rel='noopener noreferrer'
+            className='uppercase text-black text-lg tracking-wide hover:opacity-70 transition-opacity'
+          >
+            Portfolio
+          </a>
+        </div>
+      </main>
+    </>
   );
 }

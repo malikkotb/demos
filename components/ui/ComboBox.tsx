@@ -100,7 +100,7 @@ export function Combobox({ setProject }: any) {
             ? frameworks.find(
                 (framework) => framework.value === value
               )?.label
-            : "Select project..."}
+            : "Experiments"}
           <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
         </Button>
       </PopoverTrigger>
@@ -116,6 +116,7 @@ export function Combobox({ setProject }: any) {
               <CommandItem
                 key={framework.value}
                 value={framework.value}
+                className="cursor-pointer"
                 onSelect={(currentValue) => {
                   setValue(
                     currentValue === value ? "" : currentValue

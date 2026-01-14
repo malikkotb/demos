@@ -6,6 +6,8 @@ uniform vec2 uMovementDirection;
 uniform float uDistortionStrength;
 uniform float uTime;
 
+
+
 void main() {
     vec3 pos = position;
     

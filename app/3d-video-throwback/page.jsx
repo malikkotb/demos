@@ -30,6 +30,8 @@ export default function Shaders() {
     gui.domElement.style.top = '100px';
     gui.domElement.style.right = '0';
     gui.domElement.style.zIndex = '1000';
+    gui.hide();
+
 
     // Scene
     const scene = new THREE.Scene();

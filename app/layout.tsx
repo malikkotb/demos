@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Combobox } from "@/components/ui/ComboBox";
-import { ProjectTitle } from "@/components/ProjectTitle";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Malik's Demos",
+  title: "LAB | Malik Kotb",
+  description: "LAB | Malik Kotb",
+  // icons: {
+  //   icon: "/favicon.ico",
+  // },
+  openGraph: {
+    title: "LAB | Malik Kotb",
+    description: "LAB | Malik Kotb",
+  },
 };
 
 export default function RootLayout({
@@ -14,12 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='bg-black'>
+      <body className=''>
         <nav
           style={{
             mixBlendMode: "difference",
           }}
-          className='flex fixed text-white bg-transparent items-center top-0 z-50 p-4 py-8 justify-between h-[5vh] w-full'
+          className='flex fixed bg-transparent items-center top-0 z-50 p-[14px] py-8 justify-between h-[5vh] w-full'
         >
           {/* <a
             href='https://malikkotb.github.io/blog/'
@@ -28,7 +36,7 @@ export default function RootLayout({
           >
             Malik's Demos
           </a> */}
-          <a href='/'>Malik&apos;s Playground</a>
+          <a href='/' className="text-2xl text-white">LAB</a>
           <div
             style={{ zIndex: 100 }}
             // className='absolute left-1/2 -translate-x-1/2 py-2'
@@ -39,6 +47,10 @@ export default function RootLayout({
         </nav>
         {children}
       </body>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></Script>
+      <Script
+        src="/scripts/spectraGL.min.js"
+      />
     </html>
   );
 }

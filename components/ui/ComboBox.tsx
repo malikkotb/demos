@@ -97,10 +97,10 @@ export function Combobox({ setProject }: any) {
           className='w-[200px] text-white bg-transparent justify-between'
         >
           {value
-            ? frameworks.find(
+            ? `${frameworks.find(
                 (framework) => framework.value === value
-              )?.label
-            : "Experiments" [9]}
+              )?.label}`
+            : `Experiments [${frameworks.length}]`}
           <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
         </Button>
       </PopoverTrigger>

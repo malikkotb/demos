@@ -4,14 +4,14 @@ import { Combobox } from "@/components/ui/ComboBox";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "LAB | Malik Kotb",
-  description: "LAB | Malik Kotb",
+  title: "Lab | Malik Kotb",
+  description: "Lab | Malik Kotb",
   // icons: {
   //   icon: "/favicon.ico",
   // },
   openGraph: {
-    title: "LAB | Malik Kotb",
-    description: "LAB | Malik Kotb",
+    title: "Lab | Malik Kotb",
+    description: "Lab | Malik Kotb",
   },
 };
 
